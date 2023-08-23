@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Lato&family=Open+Sans&family=Outfit:wght@300&family=Plus+Jakarta+Sans:wght@300;400&family=Poppins:wght@200;400&family=Roboto:wght@300;400&family=Satisfy&display=swap');
+
+* {
+  padding: 0;
+
+}
+
+.container {
+  width: 92%;
+  height: 90vh;
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: outfit;
+  /* border: 1px solid #E1E1E6; */
+}
+
+.top {
+  /* border: 1px soli d blue; */
+  height: 8vh;
+}
+
+p {
+  font-family: outfit !important;
+  cursor: pointer;
+}
+
+.top .headingTop {
+  /* border: 1px solid red; */
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.middle {
+  /* border: 1px solid green; */
+  height: 56vh;
+  display: flex;
+  margin: -1rem auto;
+}
+
+.leftSection {
+  /* border: 1px solid red; */
+  width: 30%;
+}
+
+.leftSection .Card {
+  background-color: #2B817B;
+  color: white;
+  border-radius: 10px;
+  /* margin: 20px 0px; */
+  /* margin-bottom: ; */
+  padding: 1rem;
+  height: 15vh;
+  display: flex;
+
+}
+
+.Card .cardContent {
+  position: relative;
+  /* border: 1px solid red; */
+  width: 50%;
+}
+
+.Card .lastDate {
+  /* font-family: Outfit; */
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #E1E1E6;
+}
+
+.Card .Cardvalue {
+  /* font-family: Outfit; */
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: 0;
+
+}
+
+.Card svg {
+  width: 165.961px;
+  height: 151.448px;
+  transform: rotate(-9.391deg);
+  flex-shrink: 0;
+  /* margin-left: 2rem; */
+  /* border: 1px solid red; */
+}
+
+.withdraw {
+  background-color: #2B817B;
+  color: white;
+  padding: 10px 15px;
+  position: relative;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.withDrawIcon {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  bottom: auto;
+  font-size: 1rem;
+  color: #80B3B0;
+  /* border: 1px solid red; */
+}
+
+.yourATM h3 {
+  /* border: 1px solid red; */
+  margin: 10px 0;
+}
+
+.AtmDetails {
+  border: 1px solid #E1E1E6;
+  border-radius: 5px;
+  padding: 10px;
+
+}
+
+.AtmCardDetails {
+  display: flex;
+  /* border: 1px solid red; */
+}
+
+.AtmImg {
+  /* border: 1px solid red; */
+  width: 16%;
+}
+
+
+.AtmCardDetails .AtmNumber {
+  /* border: 1px solid red; */
+  width: 70%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.AtmDetails .onwerName span {
+  margin-top: 1rem;
+  display: flex;
+  color: #9EA3AE;
+}
+
+.changeAtm button {
+  display: flex;
+  width: 100%;
+  border: 1px solid #E1E1E6;
+  margin-top: 1rem;
+}
+
+.rightSection {
+  border: 1px solid #E1E1E6;
+  width: 65%;
+  padding: 10px;
+  margin: 0px auto;
+  border-radius: 10px;
+}
+
+.rightSection .chart {
+  /* border: 1px solid red; */
+  width: 65%;
+  /* height: 20vh; */
+  margin: 0px auto;
+}
+
+
+
+.selectDiv select {
+  border: 1px solid #E1E1E6;
+}
+
+.bottom {
+  /* border: 1px solid black; */
+  height: auto;
+  padding: 10px 20px;
+  margin-top: 6px;
+}
+
+.heading {
+  /* border: 1px solid red; */
+  display: flex;
+  position: relative;
+  height: 8vh;
+  align-items: center;
+}
+
+.rightSection .heading a {
+  position: absolute;
+  right: 10px;
+  color: #2B817B;
+  /* border: 1px solid red; */
+}
+
+.bottom .withdrawHistory {
+  /* border: 1px solid red; */
+  display: flex;
+}
+
+.bottom .heading a {
+  position: absolute;
+  /* border: 1px solid red; */
+  right: 20px;
+}
+
+.withdrawHistory .withdrawCard {
+  border: 1px solid #E1E1E6;
+  display: flex;
+  height: auto;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0px 5px;
+}
+
+
+.iconDiv .icon {
+  /* border: 1px solid; */
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: #E1E1E6;
+  /* color: red; */
+}
+
+.withdrawCard .withdrawDetails {
+  /* border: 1px solid red; */
+  margin-left: 10px;
+}
+
+.withdrawCard .withdrawDetails span {
+  /* border: 1px solid red; */
+  display: flex;
+  margin: 5px;
+}
+
+.withdrawCard .withdrawDetails span:nth-child(1) {
+  color: #9EA3AE;
+}
+
+.withdrawCard .withdrawDetails span:nth-child(2) {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.withdrawCard .withdrawDetails span:nth-child(3) {
+  color: #9EA3AE;
+}
+
+.changeAtm {
+  font-family: outfit !important;
+}
+
+.addAcountModal input {
+  background-color: #F6F6F6;
+  color: #545359;
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid #9EA3AE;
+  margin: 10px 0;
+  width: 90%;
+  /* height: 8vh; */
+  font-size: 14px;
+  font-family: outfit;
+  text-transform: lowercase;
+}
+
+.addAcountModal input:focus {
+
+  outline: 2px solid #80B3B0;
+}
+
+
+table tr th button {
+  border: 2px solid #D5E6E5 !important;
+  padding: 10px 40px !important;
+  /* margin-left: 20px !important; */
+  margin: 5px 10px !important;
+  width: 15% !important;
+  height: 8vh !important;
+  font-size: 20px !important;
+  color: #545359 !important;
+  font-weight: bold !important;
+}
+
+.addEmloyeeForm label {
+  font-weight: bold;
+  color: #1A1824;
+  font-family: outfit;
+}
+
+.addEmloyeeForm input {
+
+  background-color: #F6F6F6;
+  color: #9EA3AE;
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid #9EA3AE;
+  margin: 10px 0;
+  width: 90%;
+  /* height: 8vh; */
+  font-size: 14px;
+  font-family: outfit;
+  text-transform: lowercase;
+  outline: none;
+  font-weight: bold;
+}
+
+.addEmloyeeForm input:nth-child(3) {
+  /* width: 50% !important; */
+  /* border: 1px solid red !important; */
+  font-size: 18px;
+}
+
+/* radio:checked */
+.pagination ul li:first-child button {
+  color: #2B817B;
+  border: 1px solid #E1E1E6;
+  /* background-color: #2B817B; */
+}
+
+.pagination ul li:nth-child(2) button {
+  background-color: #2B817B;
+  color: white;
+}
+
+.pagination ul li:last-child button {
+  color: #2B817B;
+  border: 1px solid #E1E1E6;
+
+}
+
+
+
+.tableContainer table tr td {
+  /* border: 1px solid red !important; */
+  padding: 10px 5px ;
+  /* height: 3vh; */
+}
