@@ -15,6 +15,7 @@ import ResSettings from './Components/RestaurantSettings/ResSettings'
 import EditResSettings from './Components/RestaurantSettings/EditResSettings'
 import EditResAddress from './Components/RestaurantSettings/EditResAddress'
 import Notification from './Components/RestaurantSettings/Notification'
+import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy'
 // import EnterPin from './Components/Transaction/EnterPin'
 // import AddMealPlane from './Components/AddMealPlane'
 
@@ -35,6 +36,7 @@ function App() {
         <Route path='/editResSettings' element={<EditResSettings />} />
         <Route path='/editResAddress' element={<EditResAddress />} />
         <Route path='/notification' element={<Notification />} />
+        <Route path='/PrivacyPolicy' element={<PrivacyPolicy />} />
       </Routes>
       {/* <Login3 /> */}
       {/* <div className="item1"> */}

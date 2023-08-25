@@ -1,6 +1,6 @@
 import { Box, FormControl, Input, InputLabel, TextField, Typography, Select, MenuItem, OutlinedInput, Button, Grid } from '@mui/material'
 import React, { useState } from 'react'
-import { Link ,useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { BsChevronLeft } from 'react-icons/bs'
 import { RiUserAddLine } from 'react-icons/ri'
 import { FiChevronRight } from 'react-icons/fi'
@@ -34,10 +34,12 @@ function EditResAddress() {
                     Change Location
                 </h2>
 
+                {/* <Button variant='contained' > */}
 
-                <Button variant='contained' sx={{ textTransform: 'capitalize', backgroundColor: '#2B817B', mr: 4 }} onClick={Navigate("/notification")} >
+                <Link to="/notification" style={{ textTransform: 'capitalize', backgroundColor: '#2B817B', marginRight: '2rem', color: 'white',padding:'10px 20px',borderRadius:'5px' }}>
                     Save
-                </Button>
+                </Link>
+                {/* </Button> */}
 
             </Box>
 

@@ -132,9 +132,9 @@ function Settings() {
         </Box>
 
         <Box >
-          <List sx={{ width: '40%', margin: '10px auto' ,cursor:'pointer' }}>
+          <List sx={{ width: '40%', margin: '10px auto', cursor: 'pointer' }}>
 
-            <ListItem onClick={() => Navigate("/profile")} sx={{ borderBottom: '1px solid #E1E1E6', padding: '8px'}}>
+            <ListItem onClick={() => Navigate("/profile")} sx={{ borderBottom: '1px solid #E1E1E6', padding: '8px' }}>
               {/* <Link onChange={()=>Navigate("/profile")}> */}
               <AiOutlineUser style={{ padding: '5px', border: '1px solid #E1E1E6', fontSize: '16px', color: '#2B817B', marginRight: '10px', borderRadius: '5px' }} />
               Profile <BsChevronRight style={{ position: 'absolute', right: '1rem' }} />
@@ -162,7 +162,9 @@ function Settings() {
             </ListItem>
 
             <ListItem sx={{ borderBottom: '1px solid #E1E1E6', padding: '8px' }}>
-              <MdOutlinePrivacyTip style={{ padding: '5px', border: '1px solid #E1E1E6', fontSize: '16px', color: '#2B817B', marginRight: '10px', borderRadius: '5px' }} />    Privacy & Policy <BsChevronRight style={{ position: 'absolute', right: '1rem' }} />
+              <Link to='/PrivacyPolicy'>
+                <MdOutlinePrivacyTip style={{ padding: '5px', border: '1px solid #E1E1E6', fontSize: '16px', color: '#2B817B', marginRight: '10px', borderRadius: '5px' }} />    Privacy & Policy <BsChevronRight style={{ position: 'absolute', right: '1rem' }} />
+              </Link>
             </ListItem>
 
             <ListItem sx={{ border: '1px solid #FFF1F1', mt: 2, borderRadius: '5px', justifyContent: 'center', color: '#E75C62', fontWeight: 'bold' }}>
