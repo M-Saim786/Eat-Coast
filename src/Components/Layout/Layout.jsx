@@ -190,82 +190,63 @@ function Sidebar() {
                     </ListItemButton>
                 </ListItem>
                 <ListItem>
-                    <ListItemButton sx={{
-                        padding: '20px', height: '5vh',
-                        borderRadius: '10px',
-
-                    }} className='active' >
-                        <ListItemIcon>
-                            <span className='material-symbols-outlined' >
-                                receipt_long
-                            </span>
-                            {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
-                        </ListItemIcon>
-                        <ListItemText  >
-                            <Link>
+                    <ListItemButton sx={{borderRadius: '10px'}} className='active' >
+                        <Link to='/Transactions' style={{ display: 'flex', alignItems: 'center', height: '5vh', width: '100%' }}>
+                            <ListItemIcon>
+                                <span className='material-symbols-outlined' >
+                                    receipt_long
+                                </span>
+                            </ListItemIcon>
+                            <ListItemText>
                                 <h4>
-                                    <Link to='/Transactions'>
-                                        Financials
-                                    </Link>
+                                    Financials
                                 </h4>
-                            </Link>
-                        </ListItemText>
+                            </ListItemText>
+                        </Link>
                     </ListItemButton>
                 </ListItem>
                 <ListItem >
                     <ListItemButton sx={{
-                        // padding: '20px', 
                         borderRadius: '10px',
                         // border: '1px solid red'
                     }} >
-                        <Link to='/emloyees' style={{
-                            //  border: '1px solid red', 
-                            display: 'flex', alignItems: 'center', height: '5vh', width: '100%'
-                        }}>
+                        <Link to='/emloyees' style={{ display: 'flex', alignItems: 'center', height: '5vh', width: '100%' }}>
                             <ListItemIcon>
                                 <span className='material-symbols-outlined' >
                                     groups
                                 </span>
                             </ListItemIcon>
                             <ListItemText >
-
-
                                 <h4>
                                     Emloyee
                                 </h4>
-
                             </ListItemText>
                         </Link>
                     </ListItemButton>
-
                 </ListItem>
                 <ListItem >
                     <ListItemButton sx={{
                         padding: '20px', height: '5vh',
                         borderRadius: '10px',
-
+                        // border: '1px solid red'
                     }} >
-                        <ListItemIcon>
-                            <span className='material-symbols-outlined' >
-                                settings
-                            </span>
-                            {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
-                        </ListItemIcon>
-                        <ListItemText
-                        // sx={{border:'1px solid red',p:0,m:0}}
-                        >
-                            <Link>
+                        <Link to='/settings' style={{ display: 'flex', alignItems: 'center', height: '5vh', width: '100%' }}>
+                            <ListItemIcon>
+                                <span className='material-symbols-outlined' >
+                                    settings
+                                </span>
+                            </ListItemIcon>
+                            <ListItemText>
                                 <h4>
                                     Setting
                                 </h4>
-                            </Link>
-
-                        </ListItemText>
+                            </ListItemText>
+                        </Link>
                     </ListItemButton>
                 </ListItem>
 
             </List>
-            {/* <Divider /> */}
+
         </Box >
     );
     useEffect(() => {
@@ -382,7 +363,7 @@ function Sidebar() {
 
             <div className="topNav">
                 <Box sx={{ height: '7vh', display: 'flex', padding: '10px 20px' }}>
-                    <Box sx={{  textAlign: 'center', display: 'flex', alignItems: 'center', }}>
+                    <Box sx={{ textAlign: 'center', display: 'flex', alignItems: 'center', }}>
                         <Typography sx={{
                             fontSize: '25px',
                             fontWeight: 'bold',
@@ -395,12 +376,12 @@ function Sidebar() {
                             ML
                         </Typography>
                     </Box>
-                    <Box sx={{ml:3}}>
+                    <Box sx={{ ml: 3 }}>
                         {/* <Typography */}
-                        <Typography sx={{ fontWeight: 'bold' ,fontSize:'18px'}}>
+                        <Typography sx={{ fontWeight: 'bold', fontSize: '18px' }}>
                             Mazhar Lebanese Kitchen
                         </Typography>
-                        <Typography sx={{ color: '#9EA3AE',fontSize:'12px' }}>
+                        <Typography sx={{ color: '#9EA3AE', fontSize: '12px' }}>
                             <CiLocationOn />  1488 W 11th Ave, Vancouver
                         </Typography>
                     </Box>
@@ -415,9 +396,6 @@ function Sidebar() {
                             <b>
                                 {date}
                             </b>
-
-
-
                         </li>
                         <li>
                             <NotificationsIcon />

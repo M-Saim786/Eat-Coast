@@ -1,6 +1,6 @@
-
-*{
+* {
     font-family: outfit;
+    outline: none;
 }
 
 .hideBar {
@@ -12,6 +12,19 @@
     /* border: 1px solid red; */
     text-align: center;
     margin: 10px 0;
+}
+
+.input {
+    outline: none;
+    border: 1px solid #E1E1E6;
+    padding: 14px 16px 14px 16px;
+    border-radius: 5px;
+    background-color: #F6F6F6;
+    color: #1A1824;
+    font-weight: 600;
+    margin-bottom: 10px;
+    width: 60%;
+    /* border:none !important; */
 }
 
 .ul {
@@ -34,9 +47,11 @@
     text-align: center !important;
     width: 28%;
 }
-ul li a{
+
+ul li a {
     color: black;
 }
+
 .aside .ul li a {
     border: 1px solid #E1E1E6;
     display: flex;
@@ -80,7 +95,7 @@ ul li a{
     font-size: 30px;
 }
 
-.right{
+.right {
     /* border:1px solid green; */
     height: 10vh;
 }
@@ -98,7 +113,7 @@ ul li a{
     position: absolute;
     /* left: 15rem; */
     right: 0;
-    top: 0 ;
+    top: 0;
 }
 
 .right ul li {

@@ -165,8 +165,8 @@ p {
   border-radius: 10px;
 }
 
-.rightSection .chart {
-  /* border: 1px solid red; */
+.rightSection .chart ,.chart {
+  border: 1px solid red;
   width: 65%;
   /* height: 20vh; */
   margin: 0px auto;

@@ -22,9 +22,14 @@ export const BarChart = ({ chartData }) => {
                             y: {
                                 beginAtZero: true,
                             },
+                            x: {
+                                grid: {
+                                  offset: true
+                                }
+                            }
                         },
-                        barPercentage: 0.2, // Adjust the width of individual bars
-                        categoryPercentage: 0.2,
+                        barPercentage: 0.1, // Adjust the width of individual bars
+                        categoryPercentage: 1,
                     }
                 }}
             />

@@ -135,6 +135,7 @@ const data = {
                 'rgba(255, 255, 255, 0.6)'
             ],
             borderWidth: 1,
+            barThickness:'100px'
             // borderRadius: '10px',
         }
     ]
