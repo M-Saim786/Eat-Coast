@@ -146,9 +146,11 @@ function Settings() {
               Dokumens <BsChevronRight style={{ position: 'absolute', right: '1rem' }} />
             </ListItem>
 
-            <ListItem sx={{ borderBottom: '1px solid #E1E1E6', padding: '8px' }}>
-              <MdSupportAgent style={{ padding: '5px', border: '1px solid #E1E1E6', fontSize: '16px', color: '#2B817B', marginRight: '10px', borderRadius: '5px' }} />
-              Help Center <BsChevronRight style={{ position: 'absolute', right: '1rem' }} />
+            <ListItem sx={{ borderBottom: '1px solid #E1E1E6', padding: '8px', display: 'flex', alignItems: 'center' }} onClick={()=>Navigate('/helpcenter')}>
+              {/* <Link to='/helpcenter' style={{ display: 'flex', alignItems: 'center' }}> */}
+                <MdSupportAgent style={{ padding: '5px', border: '1px solid #E1E1E6', fontSize: '16px', color: '#2B817B', marginRight: '10px', borderRadius: '5px' }} />
+                Help Center <BsChevronRight style={{ position: 'absolute', right: '1rem' }} />
+              {/* </Link> */}
             </ListItem>
 
             <ListItem sx={{ borderBottom: '1px solid #E1E1E6', padding: '8px' }}>

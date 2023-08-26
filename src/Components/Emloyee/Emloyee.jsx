@@ -12,7 +12,7 @@ import FormLabel from '@mui/material/FormLabel';
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Profile from '../../Assests/profile.png'
 import CloseIcon from '@mui/icons-material/Close';
-import { CiSearch } from 'react-icons/ci'
+import { CiSearch } from 'react-icons/ci';
 const style = {
     // position: 'absolute',
     // top: '50%',

@@ -165,7 +165,8 @@ p {
   border-radius: 10px;
 }
 
-.rightSection .chart ,.chart {
+.rightSection .chart,
+.chart {
   border: 1px solid red;
   width: 65%;
   /* height: 20vh; */
@@ -340,6 +341,26 @@ table tr th button {
 
 .tableContainer table tr td {
   /* border: 1px solid red !important; */
-  padding: 10px 5px ;
+  padding: 10px 5px;
   /* height: 3vh; */
+}
+
+.popularQuestion {
+  display: flex;
+  /* border: 1px solid red; */
+  width: fit-content;
+  margin: 0px auto;
+  /* justify-content: center;/ */
+}
+
+.popularQuestion p {
+  /* border: 1px solid red; */
+  padding: 8px 20px;
+  background-color: #F0FAF9;
+  color: #2B817B;
+  font-weight: bold;
+  width: fit-content;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
