@@ -7,7 +7,6 @@ import { Route, Routes } from 'react-router-dom'
 import AllTransactions from './Components/Transaction/AllTransactions'
 import AllWithdraw from './Components/WithDrawHistory/AllWithdraw'
 import Emloyee from './Components/Emloyee/Emloyee'
-import { Login3 } from './Components/Login3'
 import Settings from './Components/Settings/Settings'
 import Profile from './Components/Settings/Profile'
 import EditProfile from './Components/Settings/EditProfile'
@@ -18,6 +17,11 @@ import Notification from './Components/RestaurantSettings/Notification'
 import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy'
 import HelpCenter from './Components/HelpCenter/HelpCenter'
 import Order from './Components/HelpCenter/Order'
+import Upcoming from './Components/Upcoming/Upcoming'
+import SelectDishes from './Components/Upcoming/SelectDishes'
+import Chat from './Components/OnDelivery/Chat'
+import Orders from './Components/Order/Orders'
+// import Upcoming from './Components/Upcoming/Upcoming'
 // import EnterPin from './Components/Transaction/EnterPin'
 // import AddMealPlane from './Components/AddMealPlane'
 
@@ -41,14 +45,15 @@ function App() {
         <Route path='/PrivacyPolicy' element={<PrivacyPolicy />} />
         <Route path='/helpcenter' element={<HelpCenter />} />
         <Route path='/OrderHelp' element={<Order />} />
-      </Routes>
-      {/* <Login3 /> */}
-      {/* <div className="item1"> */}
-      {/* <AddMealPlane /> */}
-      {/* </div> */}
-      {/* // <div className="item2"> */}
+        <Route path='/orders' element={<Orders />} />
 
-      {/* </div> */}
+        <Route path='/orders/' element={<Upcoming />} />
+
+
+        {/* <Route path='/orders/chats' element={<Chat />} /> */}
+        {/* <Route path='/upcoming/SelectDishes' element={<SelectDishes />} /> */}
+      </Routes>
+
     </div>
   )
 }

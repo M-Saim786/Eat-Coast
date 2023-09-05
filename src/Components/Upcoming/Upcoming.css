@@ -1,0 +1,37 @@
+.upcomingNav {
+    /* border: 1px solid red; */
+    width: 46%;
+    /* align-items: center; */
+}
+.upcomingNav li{
+    /* border: 1px solid red; */
+    /* text-align: center !important; */
+    padding: 5px;
+    justify-content: center;
+    /* width: 30%; */
+}
+.timerUl{
+    /* border: 1px solid red; */
+    width: 40%;
+    font-size: 12px;
+    margin-left: 20px;
+}
+.timerUl li{
+    border: 1px solid #E1E1E6;
+    margin-left: 10px;
+    padding: 5px; 
+    font-weight: bold;
+    border-radius: 5px;
+    color: #9EA3AE;
+}
+
+.timerUl li svg{
+    font-size: 18px;
+margin: 0px 5px;
+color: #9EA3AE;
+}
+
+
+input svg{
+    border: 1px solid blue !important;
+}

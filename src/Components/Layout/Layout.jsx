@@ -110,37 +110,35 @@ function Sidebar() {
                             {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
                         </ListItemIcon>
                         <ListItemText >
-                            <Link>
+                        
                                 <h4>
                                     Dashboard
                                 </h4>
-                            </Link>
-
                         </ListItemText>
                     </ListItemButton>
                 </ListItem>
                 <ListItem >
                     <ListItemButton sx={{
-                        padding: '20px', height: '5vh',
+                        // padding: '20px', height: '5vh',
                         borderRadius: '10px',
 
                     }}>
-                        <ListItemIcon>
-                            <span class="material-symbols-outlined">
-                                deployed_code
-                            </span>
+                        <Link to='/orders' style={{ display: 'flex', alignItems: 'center', height: '5vh', width: '100%' }}>
+                            <ListItemIcon>
+                                <span class="material-symbols-outlined">
+                                    deployed_code
+                                </span>
 
-                            {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
-                        </ListItemIcon>
-                        <ListItemText >
-                            <Link>
+                                {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
+                            </ListItemIcon>
+                            <ListItemText >
 
                                 <h4>
                                     Order
                                 </h4>
-                            </Link>
 
-                        </ListItemText>
+                            </ListItemText>
+                        </Link>
                     </ListItemButton>
                 </ListItem>
                 <ListItem >
@@ -190,7 +188,7 @@ function Sidebar() {
                     </ListItemButton>
                 </ListItem>
                 <ListItem>
-                    <ListItemButton sx={{borderRadius: '10px'}} className='active' >
+                    <ListItemButton sx={{ borderRadius: '10px' }} className='active' >
                         <Link to='/Transactions' style={{ display: 'flex', alignItems: 'center', height: '5vh', width: '100%' }}>
                             <ListItemIcon>
                                 <span className='material-symbols-outlined' >
@@ -361,7 +359,7 @@ function Sidebar() {
                 ))}
             </div>
 
-            <div className="topNav">
+            <Box className="topNav">
                 <Box sx={{ height: '7vh', display: 'flex', padding: '10px 20px' }}>
                     <Box sx={{ textAlign: 'center', display: 'flex', alignItems: 'center', }}>
                         <Typography sx={{
@@ -429,123 +427,11 @@ function Sidebar() {
                         </li>
                     </ul>
                 </div>
-            </div>
-
-
-
+            </Box>
 
         </>
     );
 
-
-
-
-
-
-    // return (
-    //     <>
-    {/* {
-                <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">saimrashid3344@gmail.com  </InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={age}
-                                    label="saimrashid3344@gmail.com"
-                                    onChange={handleChange}
-                                >
-                                    <MenuItem value={10}>Ten</MenuItem>
-                                    <MenuItem value={20}>Twenty</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
-                                </Select>
-                            </FormControl>
-        <aside className={`${showBar === false ? 'hideBar' : ''}`}>
-                  
-
-                    <ul>
-                        <li>
-                            <button onClick={hideSideBar} style={{ width: `${showBar === false ? '100%' : '25%'}` }}>
-                                {
-                                    showBar === true ?
-                                        <span class="material-symbols-outlined">
-                                            arrow_back_ios
-                                        </span> :
-                                        <span class="material-symbols-outlined">
-                                            menu
-                                        </span>
-                                }
-
-                            </button>
-                        </li>
-                        <li>
-                           
-                        </li>
-                        <li>
-                          
-                        </li>
-                        <li>
-                            <Link>
-                                <span className={`${showBar === false ? 'material-symbols-outlined Sidebar_icon' : 'material-symbols-outlined'}`}>
-                                    content_paste
-                                </span>
-                                <h4>
-                                    Subscription
-                                </h4>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                                <span className={`${showBar === false ? 'material-symbols-outlined Sidebar_icon' : 'material-symbols-outlined'}`}>
-                                    menu_book
-                                </span>
-                                <h4>
-                                    Menu
-                                </h4>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link  className='active'>
-                                <span className={`${showBar === false ? 'material-symbols-outlined Sidebar_icon' : 'material-symbols-outlined'}`}>
-                                    receipt_long
-                                </span>
-                                <h4>
-                                    Financials
-                                </h4>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                                <span className={`${showBar === false ? 'material-symbols-outlined Sidebar_icon' : 'material-symbols-outlined'}`}>
-                                    groups
-                                </span>
-                                <h4>
-                                    Emloyee
-                                </h4>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                                <span className={`${showBar === false ? 'material-symbols-outlined Sidebar_icon' : 'material-symbols-outlined'}`}>
-                                    settings
-                                </span>
-                                <h4>
-                                    Settings
-                                </h4>
-                            </Link>
-                        </li>
-                    </ul>
-                </aside>
-            } */}
-
-    {/* <div className="mainDi"> */ }
-
-
-    {/* <Transaction /> */ }
-    {/* </div> */ }
-
-    //     </>
-
-    // )
 }
 
 export default Sidebar
