@@ -21,6 +21,7 @@ import Upcoming from './Components/Upcoming/Upcoming'
 import SelectDishes from './Components/Upcoming/SelectDishes'
 import Chat from './Components/OnDelivery/Chat'
 import Orders from './Components/Order/Orders'
+import OnDelivery from './Components/OnDelivery/OnDelivery'
 // import Upcoming from './Components/Upcoming/Upcoming'
 // import EnterPin from './Components/Transaction/EnterPin'
 // import AddMealPlane from './Components/AddMealPlane'
@@ -48,8 +49,8 @@ function App() {
         <Route path='/orders' element={<Orders />} />
 
         <Route path='/orders/' element={<Upcoming />} />
-
-
+        <Route path='/orders/OnDelivery' element={<OnDelivery />} />
+        <Route path='/orders/OnDelivery/Chats' element={<Chat />} />
         {/* <Route path='/orders/chats' element={<Chat />} /> */}
         {/* <Route path='/upcoming/SelectDishes' element={<SelectDishes />} /> */}
       </Routes>

@@ -146,12 +146,13 @@ export default function Upcoming() {
 
     return (
         <>
-            <TopNav />
             <Box sx={{
-                height: '89vh', overflowY: 'scroll',
+                height: '100vh', overflowY: 'scroll',
                 border: '1px solid blue',
-                width: '94%'
+                width: '94%',
+                backgroundColor:'white'
             }} className='container'>
+                <TopNav />
                 {Dishes === false ?
                     <>
                         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', }}>

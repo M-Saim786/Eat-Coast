@@ -1,0 +1,6 @@
+.nav-button{
+    background-color: red;
+}
+.nav-button:active{
+    background-color: aqua;
+}

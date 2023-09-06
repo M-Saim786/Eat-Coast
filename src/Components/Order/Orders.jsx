@@ -19,7 +19,7 @@ import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
 import dishImg from '../../Assests/dish.png'
 import OnDelivery from '../OnDelivery/OnDelivery';
 import Upcoming from '../Upcoming/Upcoming';
-
+// import './style.css'
 const data = [
     {
         plan: 'Mazahr Lebanese Meal Plan',
@@ -124,13 +124,17 @@ export function TopNav() {
     const Navigate = useNavigate()
     return (
         <>
-            <Box className='topNav' sx={{ display: '', justifyContent: 'space-between', alignItems: 'flex-end', backgroundColor: 'white' ,border:'1px solid red' ,width:'94%' }}>
+            <Box className='topNav' sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', backgroundColor: 'white', }}>
                 <List sx={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-end', cursor: 'pointer' }} className='upcomingNav'>
-                    <ListItem sx={{ fontWeight: 'bold', color: '#9EA3AE' }}>Reuqest</ListItem>
-                    <ListItem sx={{ fontWeight: 'bold', color: '#1A1824', }} onClick={() => Navigate('/orders/')}>Upcoming</ListItem>
-                    <ListItem sx={{ fontWeight: 'bold', color: '#9EA3AE' }}>Prepare</ListItem>
-                    <ListItem sx={{ fontWeight: 'bold', color: '#9EA3AE' }}>Pack</ListItem>
-                    <ListItem sx={{ fontWeight: 'bold', color: '#9EA3AE' }} onClick={() => Navigate('/orders/onDelivery')}>On Delivery</ListItem>
+                    <ListItem sx={{ fontWeight: 'bold', color: '#9EA3AE' }} className='nav-button'  >Reuqest</ListItem>
+
+                    <ListItem sx={{ fontWeight: 'bold', color: '#1A1824', }} onClick={() => Navigate('/orders/')} className='nav-button'  > Upcoming</ListItem>
+
+                    <ListItem sx={{ fontWeight: 'bold', color: '#9EA3AE' }} className='nav-button' >Prepare</ListItem>
+
+                    <ListItem sx={{ fontWeight: 'bold', color: '#9EA3AE' }} className='nav-button' >Pack</ListItem>
+                    
+                    <ListItem sx={{ fontWeight: 'bold', color: '#9EA3AE' }} onClick={() => Navigate('/orders/onDelivery')} className='nav-button' >On Delivery</ListItem>
                 </List>
                 <Typography sx={{ fontWeight: 'bold', color: '#9EA3AE', mr: 3, mb: 1 }} >
                     Order History

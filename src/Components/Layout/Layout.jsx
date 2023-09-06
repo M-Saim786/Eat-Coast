@@ -375,7 +375,7 @@ function Sidebar() {
                         </Typography>
                     </Box>
                     <Box sx={{ ml: 3 }}>
-                        {/* <Typography */}
+                  
                         <Typography sx={{ fontWeight: 'bold', fontSize: '18px' }}>
                             Mazhar Lebanese Kitchen
                         </Typography>

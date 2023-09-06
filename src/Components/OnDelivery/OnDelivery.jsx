@@ -13,6 +13,7 @@ import { TbCurrentLocation } from 'react-icons/tb'
 
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom'
+import { TopNav } from '../Order/Orders'
 
 
 const data = [
@@ -43,7 +44,7 @@ const data = [
 
 ]
 
-
+// let details = false
 
 function OnDelivery() {
     const Navigate = useNavigate()
@@ -51,6 +52,8 @@ function OnDelivery() {
     const [InQueue, setInQueue] = useState(false)
     const [InDelivery, setInDelivery] = useState(false)
     const [Complete, setComplete] = useState(false)
+    const [Chats, setChats] = useState(false)
+    const [details, setdetails] = useState(false)
     const handleQueue = () => {
         setInQueue(true)
         setInDelivery(false)
@@ -80,15 +83,13 @@ function OnDelivery() {
 
     return (
         <>
-            <Box className='container' >
+            <Box className='container' sx={{ height: '100vh' }} >
+                <TopNav />
                 <Box>
                     <Typography sx={{ fontWeight: 'bold', fontSize: '20px', m: 2, mb: 1 }}>
                         On Delivery
                     </Typography>
                 </Box>
-
-
-
                 {
                     onWay === false ? <>
                         <Box sx={{ margin: '10px auto', border: '1px solid #E1E1E6', width: '40%', borderRadius: '20px', p: 2, textAlign: 'center' }}>
@@ -158,7 +159,7 @@ function OnDelivery() {
                                             backgroundColor: '#2B817B'
                                         }, color: 'white', textTransform: 'capitalize',
                                         width: '50%', mx: 1
-                                    }} onClick={() => Navigate('/orders/chats')}>
+                                    }} onClick={() => Navigate('/orders/OnDelivery/Chats')}>
                                         <BsFillChatSquareTextFill style={{ marginRight: '10px' }} />
                                         Chat
                                     </Button>
@@ -258,57 +259,62 @@ function OnDelivery() {
 
                             <Box sx={{ width: '28%', border: '1px solid #E1E1E6', borderRadius: '10px', display: `${InQueue || Complete || InDelivery === true ? 'block' : 'none'}`, transition: 'all 1s ease' }}>
                                 <Box sx={{ position: 'relative', p: 4, ml: 1, height: 'auto', }}>
+                                    {/* Heading */}
                                     <Box sx={{ display: 'flex', justifyContent: 'space-between', p: 1 }}>
                                         <Typography sx={{ color: '#E75C62' }}>
                                             <CloseIcon onClick={handleClose} />
                                         </Typography>
                                         {
-                                            InQueue === true && InDelivery === true && Complete === true ?
-                                                <Typography sx={{ fontWeight: 'bold', margin: '0px auto' }}>
-                                                    See All Orders
-                                                </Typography> :
-                                                <>
+                                            details === false ? <>
+                                                {InQueue === true && InDelivery === true && Complete === true ?
+                                                    <Typography sx={{ fontWeight: 'bold', margin: '0px auto' }}>
+                                                        See All Orders
+                                                    </Typography> :
+                                                    <>
 
-                                                    {InQueue &&
-                                                        <Typography sx={{ fontWeight: 'bold', margin: '0px auto' }}>
-                                                            InQueue
-                                                        </Typography>
-                                                    }
-                                                    {
-                                                        InDelivery &&
-                                                        <Typography sx={{ fontWeight: 'bold', margin: '0px auto' }}>
-                                                            Being Delivered
-                                                        </Typography>
-                                                    }
-                                                    {
-                                                        Complete &&
-                                                        <Typography sx={{ fontWeight: 'bold', margin: '0px auto' }}>
-                                                            Completed
-                                                        </Typography>
-                                                    }
-                                                </>
+                                                        {InQueue &&
+                                                            <Typography sx={{ fontWeight: 'bold', margin: '0px auto' }}>
+                                                                InQueue
+                                                            </Typography>
+                                                        }
+                                                        {
+                                                            InDelivery &&
+                                                            <Typography sx={{ fontWeight: 'bold', margin: '0px auto' }}>
+                                                                Being Delivered
+                                                            </Typography>
+                                                        }
+                                                        {
+                                                            Complete &&
+                                                            <Typography sx={{ fontWeight: 'bold', margin: '0px auto' }}>
+                                                                Completed
+                                                            </Typography>
+                                                        }
+                                                    </>}
+                                            </> :
+                                                <Typography sx={{ fontWeight: 'bold', margin: '0px auto' }}>
+                                                    Details
+                                                </Typography>
                                         }
                                     </Box>
-                                    <Box sx={{ height: '60vh', width: '110%', overflowY: 'scroll', ml: -1, p: 0.5 }}>
+                                    {/* MainBody */}
+                                    <Box sx={{ height: '60vh', width: '120%', overflowY: 'scroll', ml: -1, p: 0.5, ml: -4 }}>
                                         {InQueue && <InQueuee />}
                                         {InDelivery && <InnDelivery />}
                                         {Complete && <Completed />}
                                     </Box>
                                 </Box>
-                                <Box sx={{ display: 'flex', justifyContent: 'space-around', border: '1px solid #E1E1E6', p: 2, mt: 3, mb: 0 }}>
+                                {details && <Box sx={{ display: 'flex', justifyContent: 'space-around', border: '1px solid #E1E1E6', p: 2, mt: 3, mb: 0 }}>
                                     <Typography sx={{ color: '#9EA3AE' }}>
                                         Waiting:
                                     </Typography>
                                     <Typography sx={{ color: '#1A1824', fontWeight: 'bold' }}>
                                         4 Order
                                     </Typography>
-                                </Box>
+                                </Box>}
                             </Box>
                         </Box>
                     </>
                 }
-
-
             </Box>
         </>
     )
@@ -318,49 +324,53 @@ export default OnDelivery
 
 
 export function InQueuee() {
-
-
     const [Details, setDetails] = useState(false)
-    const seeDetails = () => {
+    const seeDetails = async (e) => {
         setDetails(true)
+        if (Details) {
+        }
+        console.log(e.target.value)
+        console.log(e.target.key)
     }
     return (
         <>
             {
-                data.map((order, index) => {
-                    return (
-                        <>
-                            <Box sx={{ border: '1px solid #E1E1E6', borderRadius: '5px', my: 1, p: 1, px: 3, }}>
-                                <Box sx={{ display: 'flex', justifyContent: 'space-between', }}>
-                                    <Box>
-                                        <Typography sx={{ border: '1px solid #6A82CF', borderRadius: '50%', padding: '10px', color: '#6A82CF', display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
-                                            <CgSandClock />
+                Details === false ?
+                    data.map((order, index) => {
+                        return (
+                            <>
+                                <Box sx={{ border: '1px solid #E1E1E6', borderRadius: '5px', my: 1, p: 1, px: 3, }}>
+                                    <Box sx={{ display: 'flex', justifyContent: 'space-between', }}>
+                                        <Box>
+                                            <Typography sx={{ border: '1px solid #6A82CF', borderRadius: '50%', padding: '10px', color: '#6A82CF', display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
+                                                <CgSandClock />
+                                            </Typography>
+                                        </Box>
+                                        <Box>
+                                            <Typography sx={{ padding: '4px 10px', fontSize: '14px', backgroundColor: `${order.orderType === 'Single Order' ? '#7ECC49' : '#7B49E5'}`, borderRadius: '5px', color: 'white', }}>
+                                                {order.orderType}
+                                            </Typography>
+                                        </Box>
+                                    </Box>
+                                    <Box sx={{ my: 2 }}>
+                                        <Typography sx={{ color: '#1A1824', fontWeight: 'bold' }}>
+                                            {order.address}
+                                        </Typography>
+                                        <Typography sx={{ color: '#9EA3AE', fontSize: '14px' }}>
+                                            {order.orderName}
                                         </Typography>
                                     </Box>
                                     <Box>
-                                        <Typography sx={{ padding: '4px 10px', fontSize: '14px', backgroundColor: `${order.orderType === 'Single Order' ? '#7ECC49' : '#7B49E5'}`, borderRadius: '5px', color: 'white', }}>
-                                            {order.orderType}
+                                        <Typography sx={{ color: '#2B817B', textAlign: 'center', textDecoration: 'underline', fontSize: '14px', px: 4, my: 2 }} onClick={(e) => seeDetails(e)} value={index} key={index}>
+                                            Detail
                                         </Typography>
                                     </Box>
                                 </Box>
-                                <Box sx={{ my: 2 }}>
-                                    <Typography sx={{ color: '#1A1824', fontWeight: 'bold' }}>
-                                        {order.address}
-                                    </Typography>
-                                    <Typography sx={{ color: '#9EA3AE', fontSize: '14px' }}>
-                                        {order.orderName}
-                                    </Typography>
-                                </Box>
-                                <Box>
-                                    <Typography sx={{ color: '#2B817B', textAlign: 'center', textDecoration: 'underline', fontSize: '14px', px: 4, my: 2 }} onclick={seeDetails}>
-                                        Detail
-                                    </Typography>
-                                </Box>
-                            </Box>
-                        </>
-                    )
-                })
+                            </>
+                        )
+                    }) : <OrderDetails />
             }
+
         </>
     )
 }
@@ -441,7 +451,159 @@ export function Completed() {
 export function OrderDetails() {
     return (
         <>
-
+            <Box>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Box>
+                        <Typography sx={{ fontSize: '14px', color: '#9EA3AE' }}>
+                            #UEC - 12345
+                        </Typography>
+                    </Box>
+                    <Box>
+                        <Typography sx={{ backgroundColor: '#7ECC49', fontSize: '14px', padding: '5px 10px', color: 'white', borderRadius: '5px' }}>
+                            Single order
+                        </Typography>
+                    </Box>
+                </Box>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', my: 1 }}>
+                    <Box>
+                        <Typography sx={{ color: '#1A1824', fontSize: '14px', fontWeight: 'bold' }}>
+                            Salmon with chili sauce
+                        </Typography>
+                    </Box>
+                    <Box>
+                        <Typography sx={{ color: '#1A1824', fontWeight: 'bold', textAlign: 'center', fontSize: '18px' }} >
+                            1
+                            <Typography sx={{ color: '#9EA3AE', fontSize: '12px' }}>
+                                Order
+                            </Typography>
+                        </Typography>
+                    </Box>
+                </Box>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', my: 1 }}>
+                    <Box>
+                        <Typography sx={{ fontSize: '13px' }}>
+                            Weekly subscription :
+                        </Typography>
+                    </Box>
+                    <Box>
+                        <Typography sx={{ fontSize: '13px', padding: '5px 10px', border: '1px solid #D5E6E5', borderRadius: '5px' }}>
+                            Thursday, Sept 02, 2021
+                        </Typography>
+                    </Box>
+                </Box>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', my: 1 }}>
+                    <Box>
+                        <Typography sx={{ fontSize: '13px' }}>
+                            Time :
+                        </Typography>
+                    </Box>
+                    <Box>
+                        <Typography sx={{ fontSize: '13px', padding: '5px 10px', border: '1px solid #D5E6E5', borderRadius: '5px' }}>
+                            10.00 am - 01.00 pm
+                        </Typography>
+                    </Box>
+                </Box>
+                <Box sx={{ my: 2, mt: 3, border: '1px solid #E1E1E6', borderRadius: '5px', padding: '10px' }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', my: 1.5 }}>
+                        <Box>
+                            <Typography sx={{ color: '#9EA3AE', fontSize: '12px' }}>
+                                Main course
+                                <Typography sx={{ color: '#545359', fontSize: '14px', fontWeight: 'bold' }}>
+                                    Kabasa
+                                </Typography>
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography sx={{ color: '#1A1824', fontSize: '14px', fontWeight: 'bold' }}>
+                                2
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography sx={{ color: '#1A1824', fontWeight: 'bold' }}>
+                                $10.00
+                            </Typography>
+                        </Box>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', my: 1.5 }}>
+                        <Box>
+                            <Typography sx={{ color: '#9EA3AE', fontSize: '12px' }}>
+                                Salad dishes
+                                <Typography sx={{ color: '#545359', fontSize: '14px', fontWeight: 'bold' }}>
+                                    Kabasa
+                                </Typography>
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography sx={{ color: '#1A1824', fontSize: '14px', fontWeight: 'bold' }}>
+                                1
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography sx={{ color: '#1A1824', fontWeight: 'bold' }}>
+                                $10.00
+                            </Typography>
+                        </Box>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', my: 1.5 }}>
+                        <Box>
+                            <Typography sx={{ color: '#9EA3AE', fontSize: '12px' }}>
+                                Sweet dishes
+                                <Typography sx={{ color: '#545359', fontSize: '14px', fontWeight: 'bold' }}>
+                                    Kabasa
+                                </Typography>
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography sx={{ color: '#1A1824', fontSize: '14px', fontWeight: 'bold' }}>
+                                2
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography sx={{ color: '#1A1824', fontWeight: 'bold' }}>
+                                $10.00
+                            </Typography>
+                        </Box>
+                    </Box>
+                </Box>
+                <Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'right', my: 1 }}>
+                        <Box>
+                            <Typography sx={{ color: '#9EA3AE' }}>
+                                Subtotal :
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography sx={{ color: '#9EA3AE' }}>
+                                $ 10.00
+                            </Typography>
+                        </Box>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'right', my: 1 }}>
+                        <Box>
+                            <Typography sx={{ color: '#9EA3AE' }}>
+                                Tax :
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography sx={{ color: '#9EA3AE' }}>
+                                $ 10.00
+                            </Typography>
+                        </Box>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'right', my: 1 }}>
+                        <Box>
+                            <Typography sx={{ color: '#1A1824' }}>
+                                Total :
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Typography sx={{ color: '#1A1824', fontWeight: 'bold' }}>
+                                $ 10.00
+                            </Typography>
+                        </Box>
+                    </Box>
+                </Box>
+            </Box>
         </>
     )
 }
